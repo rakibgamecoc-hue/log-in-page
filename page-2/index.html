@@ -3,16 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rakib Hassan | Front-end Developer</title>
+    <title>Rakib Hassan | Front-end Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,600&family=Mulish:ital,wght@0,300;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="page-loader" aria-hidden="true">
+        <div class="loader-mark">
+            <span class="loader-line"></span>
+            <span class="loader-line"></span>
+            <span class="loader-line"></span>
+        </div>
+        <p class="loader-text">Loading portfolio</p>
+    </div>
+
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
     <nav class="site-nav" aria-label="Primary navigation">
         <a class="nav-brand" href="#home">Rakib</a>
-        <div class="nav-links">
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" aria-label="Switch color theme">Theme</button>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="sr-only">Open navigation menu</span>
+            </button>
+        </div>
+        <div id="primary-nav" class="nav-links">
             <a href="#home">Home</a>
             <a href="#projects">Work</a>
             <a href="#learning">Learning</a>
@@ -22,14 +43,17 @@
 
     <main class="site-shell">
         <section id="home" class="hero-section">
-            <header class="hero-copy">
-                <p class="eyebrow">Currently building and learning in public.</p>
-                <h1 class="name-rakib">Rakib Hassan.<br><span>Front-end Developer & UI </span> <span class="des">Designer.</span></h1>
-                <p class="hero-text">Focusing on the essentials of HTML, CSS, and JavaScript. I believe in clean code and simple interfaces.</p>
-                <a class="hero-cta" href="#projects">Read more about my stack</a>
+            <header class="hero-copy reveal">
+                <p class="eyebrow">Building thoughtful interfaces and learning in public.</p>
+                <h1 class="name-rakib">Rakib Hassan.<br><span>Front-end Developer &amp; UI</span> <span class="des">Designer.</span></h1>
+                <p class="hero-text">I design and build responsive interfaces with a focus on clarity, accessibility, and a calm visual rhythm.</p>
+                <div class="hero-buttons">
+                    <a class="hero-cta" href="#projects">See selected work</a>
+                    <a class="button button-secondary" href="#contact">Start a conversation</a>
+                </div>
             </header>
 
-            <aside class="hero-panel" aria-labelledby="panel-label">
+            <aside class="hero-panel reveal" aria-labelledby="panel-label">
                 <div class="hero-panel-card">
                     <p id="panel-label" class="panel-label">LOG_ENTRY_CURRENT</p>
                     <dl class="panel-details">
@@ -39,72 +63,144 @@
                         </div>
                         <div class="panel-row">
                             <dt>Focus</dt>
-                            <dd>React Components & Grid Systems</dd>
+                            <dd>Responsive UI systems, component structure, and interaction design</dd>
                         </div>
                         <div class="panel-row">
                             <dt>Last updated</dt>
-                            <dd>Oct 2025</dd>
+                            <dd>April 2026</dd>
                         </div>
                     </dl>
                 </div>
             </aside>
         </section>
 
-        <section id="projects" class="featured-section">
+        <section id="projects" class="featured-section reveal">
             <header class="section-header">
                 <div>
                     <p class="section-label">ARCHIVE_00</p>
                     <h2>Featured Projects</h2>
                 </div>
-                <p class="section-meta">Sorted by recent / 2024</p>
+                <p class="section-meta">Selected front-end explorations / 2026</p>
             </header>
 
             <div class="projects-grid">
-                <article class="project-card project-card-primary">
-                    <a class="project-card-link" href="#" aria-label="Open Minimalist Portfolio">
+                <article class="project-card project-card-primary reveal">
+                    <button
+                        class="project-card-link"
+                        type="button"
+                        data-project="Minimalist Portfolio"
+                        data-summary="A sleek personal portfolio focused on typography, spacing discipline, and responsive storytelling across modern screen sizes."
+                        data-stack="HTML, CSS, JavaScript"
+                        data-highlights="Responsive hero, animated section reveals, accessible interactions"
+                        aria-label="Open Minimalist Portfolio details">
                         <p class="card-tag">BUILD 002</p>
                         <h3>Minimalist Portfolio</h3>
-                        <p class="card-description">UI design / Dev</p>
-                        <span class="card-cta" aria-hidden="true">→</span>
-                    </a>
+                        <p class="card-description">UI design / Development</p>
+                        <span class="card-cta" aria-hidden="true">&rarr;</span>
+                    </button>
                 </article>
-                <article class="project-card project-card-secondary">
-                    <a class="project-card-link" href="#" aria-label="Open Typography Lab">
+                <article class="project-card project-card-secondary reveal">
+                    <button
+                        class="project-card-link"
+                        type="button"
+                        data-project="Typography Lab"
+                        data-summary="A visual playground for testing font pairings, scale systems, and balanced whitespace across editorial-style layouts."
+                        data-stack="HTML, CSS"
+                        data-highlights="Custom scale system, bold type pairings, polished hover states"
+                        aria-label="Open Typography Lab details">
                         <p class="card-tag">BUILD 003</p>
                         <h3>Typography Lab</h3>
                         <p class="card-description">Visual experiment</p>
-                        <span class="card-cta" aria-hidden="true">→</span>
-                    </a>
+                        <span class="card-cta" aria-hidden="true">&rarr;</span>
+                    </button>
+                </article>
+                <article class="project-card project-card-tertiary reveal">
+                    <button
+                        class="project-card-link"
+                        type="button"
+                        data-project="Component Notes"
+                        data-summary="A compact front-end pattern library documenting buttons, cards, states, and reusable layout decisions for future projects."
+                        data-stack="HTML, CSS, JavaScript"
+                        data-highlights="Reusable sections, state-aware buttons, clean documentation layout"
+                        aria-label="Open Component Notes details">
+                        <p class="card-tag">BUILD 004</p>
+                        <h3>Component Notes</h3>
+                        <p class="card-description">Design system starter</p>
+                        <span class="card-cta" aria-hidden="true">&rarr;</span>
+                    </button>
                 </article>
             </div>
         </section>
 
-        <section id="learning" class="learning-section">
+        <section id="learning" class="learning-section reveal">
             <div class="learning-copy">
                 <p class="section-label">LEARNING_PATH</p>
                 <h2>Where I grow</h2>
-                <p>Continuing to build stronger interfaces with reusable components, accessible interactions, and polished visual systems.</p>
+                <p>Continuing to build stronger interfaces with reusable components, accessible interactions, polished visual systems, and JavaScript that supports the experience instead of competing with it.</p>
+            </div>
+            <div class="learning-points">
+                <article>
+                    <h3>Right now</h3>
+                    <p>Improving layout systems, component structure, and interaction polish.</p>
+                </article>
+                <article>
+                    <h3>Next focus</h3>
+                    <p>Deeper JavaScript patterns, smoother UI state changes, and richer responsive work.</p>
+                </article>
             </div>
         </section>
 
-        <footer id="contact" class="bottom-cta">
-            <p class="bottom-title">Precision is the result of <span class="last-page-text">repeated practice.</span></p>
-            <a class="button" href="#projects">View log</a>
-        </footer>
+        <section id="contact" class="contact-section reveal" aria-labelledby="contact-title">
+            <div class="contact-copy">
+                <p class="section-label">CONTACT_SIGNAL</p>
+                <h2 id="contact-title" class="bottom-title">Precision is the result of <span class="last-page-text">repeated practice.</span></h2>
+                <p class="contact-text">If you want a clean landing page, a portfolio refresh, or a front-end collaboration, send a quick message here and I will use it as the next build brief.</p>
+            </div>
+            <form class="contact-form" novalidate>
+                <label>
+                    Name
+                    <input type="text" name="name" placeholder="Your name">
+                </label>
+                <label>
+                    Email
+                    <input type="email" name="email" placeholder="name@example.com">
+                </label>
+                <label>
+                    Message
+                    <textarea name="message" rows="4" placeholder="Tell me what you want to build"></textarea>
+                </label>
+                <p class="form-message" aria-live="polite"></p>
+                <button class="button" type="submit">Send message</button>
+            </form>
+        </section>
     </main>
 
     <footer class="site-footer">
         <div class="footer-content">
             <div class="social-links">
-                <a href="#" aria-label="GitHub">GitHub</a>
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="Facebook">Facebook</a>
-                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="https://github.com/" aria-label="GitHub">GitHub</a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn">LinkedIn</a>
+                <a href="https://www.behance.net/" aria-label="Behance">Behance</a>
+                <a href="https://www.instagram.com/" aria-label="Instagram">Instagram</a>
             </div>
             <div class="email-placeholder">
-                <!-- Email will go here -->
+                <a href="mailto:rakibgamecoc@gmail.com">rakibgamecoc@gmail.com</a>
             </div>
         </div>
     </footer>
+
+    <div class="project-modal" hidden>
+        <div class="project-modal-backdrop" data-close-modal="true"></div>
+        <div class="project-modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" type="button" aria-label="Close project details">&times;</button>
+            <p class="section-label">PROJECT_DETAIL</p>
+            <h3 id="modal-title"></h3>
+            <p class="modal-summary"></p>
+            <p class="modal-meta"><strong>Stack:</strong> <span class="modal-stack"></span></p>
+            <p class="modal-meta"><strong>Highlights:</strong> <span class="modal-highlights"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
