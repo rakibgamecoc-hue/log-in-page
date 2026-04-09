@@ -1,12 +1,13 @@
 :root {
-    --bg: #f4f4f1;
+    --bg: #1f1f15;
     --surface: #ffffff;
     --surface-soft: #f1f3f6;
-    --text: #232a33;
+    --text: #95e8c7;
     --muted: #8a929b;
-    --accent: #35394b;
+    --accent: #8c937d;
     --accent-soft: #e7e9ed;
     --shadow: 0 24px 70px rgba(35, 42, 51, 0.12);
+    --button-color: rgb(96, 189, 226);
 }
 
 * {
@@ -21,9 +22,10 @@ html, body {
 
 body {
     font-family: "Mulish", "Montserrat", sans-serif;
-    background: radial-gradient(circle at top left, rgba(255,255,255,0.9), rgba(244,244,241,1) 45%);
+    background: var(--bg);  
     color: var(--text);
     line-height: 1.6;
+    scroll-behavior:smooth;
 }
 
 body::before {
@@ -46,9 +48,9 @@ body::before {
     position: sticky;
     top: 0;
     z-index: 20;
-    background: rgba(244, 244, 241, 0.96);
-    border-bottom: 1px solid #e7e9ed;
-    backdrop-filter: blur(10px);
+    background: rgba(91, 100, 105, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(20px);
 }
 
 .nav-brand {
@@ -97,6 +99,24 @@ body::before {
 .site-nav a:hover,
 .site-nav a:focus-visible {
     color: var(--accent);
+}
+
+.nav-links a {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 767px) {
+    .nav-brand {
+        display: none;
+    }
 }
 
 .site-shell {
@@ -170,6 +190,15 @@ body::before {
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
+.hero-cta {
+    background-color: var(--button-color);
+}
+.button{
+    background-color: var(--button-color);
+}
+.bottom-title .last-page-text {
+    color: rgb(57, 123, 174);;
+}
 .hero-cta:hover,
 .button:hover,
 .project-card-link:hover {
@@ -196,6 +225,23 @@ body::before {
     padding: 30px 32px;
     box-shadow: var(--shadow);
     border: 1px solid #e7e9ed;
+    transition: background-color 0.3s ease;
+}
+
+.hero-panel-card:hover {
+    background-color: var(--accent);
+}
+
+.hero-panel-card:hover .panel-row dt {
+    color: white;
+}
+
+.hero-panel-card:hover .panel-row dd {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-panel-card:hover .panel-label {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .panel-details {
@@ -232,6 +278,23 @@ body::before {
     padding: 34px 32px;
     box-shadow: var(--shadow);
     border: 1px solid #e7e9ed;
+    transition: background-color 0.3s ease;
+}
+
+.learning-section:hover {
+    background-color: var(--accent);
+}
+
+.learning-section:hover .learning-copy h2 {
+    color: white;
+}
+
+.learning-section:hover .learning-copy p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.learning-section:hover .section-label {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .learning-copy {
@@ -273,6 +336,23 @@ body::before {
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 0 28px 60px rgba(77, 86, 104, 0.08);
+    transition: background 0.3s ease;
+}
+
+.project-card:hover {
+    background: var(--accent);
+}
+
+.project-card:hover .project-card-link {
+    color: white;
+}
+
+.project-card:hover .card-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.project-card:hover .card-cta {
+    color: white;
 }
 
 .project-card::before {
